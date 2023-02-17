@@ -68,6 +68,34 @@ const Benefits = ({setSelectedPage}: Props) => {
           </p>
         </motion.div>
       </motion.div>
+        {/* BENEFITS */}
+        <motion.div
+          className="mt-5 items-center justify-between gap-8 md:flex"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={container}
+        >
+          {benefits.map((benefit: BenefitType) => (
+            <Benefit
+              key={benefit.title}
+              icon={benefit.icon}
+              title={benefit.title}
+              description={benefit.description}
+              setSelectedPage={setSelectedPage}
+            />
+          ))}
+        </motion.div>
+
+    {/* GRAPHICS AND DESCRIPTION */}
+        <div className="mt-16 items-center justify-between gap-20 md:mt-28 md:flex">
+          {/* GRAPHIC */}
+          <img
+            className="mx-auto"
+            alt="benefits-page-graphic"
+            src={BenefitsPageGraphic}
+          />
+
       </section>
   )
 };
